@@ -36,8 +36,10 @@
         }
         h1,
         .container1 p {
-            padding: 10px;
             text-align: center;
+        }
+        .btn {
+            color: #ffebcd;
         }
     </style>
 
@@ -46,9 +48,17 @@
     <div class='container'>
         <div class="jumbotron jumbotron-fluid heading">
             <div class="container1">
-                <h1 class="display-4 heading">Fotogalerija</h1>
+                <h1 class="display-4">Fotogalerija</h1>
                 <p class="lead">Kiekvienoje nuotraukoje yra du žmonės: fotografas ir žiūrovas</p>
             </div>
+          </div>
+          <div class="button-group sort-by-button-group">
+            <button class="btn btn-outline-light is-checked" data-sort-value="random" data-sort-direction="desc">Atsitiktine tvarka</button>
+            <button class="btn btn-outline-light" data-sort-value="name" data-sort-direction="asc">Fotografą (A-Z)</button>
+            <button class="btn btn-outline-light" data-sort-value="name" data-sort-direction="desc">Fotografą (Z-A)</button>
+            <!-- <button class="btn btn-outline-light" data-sort-value="title">Aprašymą</button>
+            <button class="btn btn-outline-light" data-sort-value="likes">Populiarumą</button>
+            <button class="btn btn-outline-light" data-sort-value="category">category</button> -->
           </div>
         <div class='row grid'>
             <div class="col-md-6 grid-sizer">

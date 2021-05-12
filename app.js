@@ -10,7 +10,7 @@ fetch('https://api.unsplash.com/photos?client_id=_CfdRIyvRxD4LnrNlRj-r7pGE5ZAcul
         row.innerHTML+= `
         <div class="col-md-6 grid-item">
                 <img class=" image"  src="${data[i].urls.regular}" alt="">
-                    <h5>Fotografas: ${data[i].user.first_name}</h5>
+                    <h5 class="name"> ${data[i].user.first_name}</h5>
                     <p class="title"> ${data[i].alt_description}</p>
                 </div>`    
             }
@@ -19,6 +19,7 @@ fetch('https://api.unsplash.com/photos?client_id=_CfdRIyvRxD4LnrNlRj-r7pGE5ZAcul
                 itemSelector: '.grid-item',
                 stagger: 30,
                 getSortData: {
+                    name: '.name',
                     title: '.title'
                 },
                 masonry: {
@@ -28,6 +29,28 @@ fetch('https://api.unsplash.com/photos?client_id=_CfdRIyvRxD4LnrNlRj-r7pGE5ZAcul
                 sortBy: 'title',
                 sortAscending: true,
             });
+            var sortByGroup = document.querySelector('.sort-by-button-group');
+                sortByGroup.addEventListener('click', function(event){
+
+                    if (!matchesSelector(event.target, '.btn')) {
+                        return;
+                    }
+
+                    var sortValue = event.target.getAttribute('data-sort-value');
+                    var sortDirection = event.target.getAttribute('data-sort-direction');
+                    var isAscending = (sortDirection == 'asc'); //true, folse
+
+                    iso.arrange({
+                        sortBy: sortValue,
+                        sortAscending: isAscending
+                    });
+
+
+                    console.log(isAscending);
+
+                    console.log(sortValue);
+                    console.log( sortDirection);
+                });
         });
             
 // -----------------INFINETE SCROLL.......................................
@@ -56,14 +79,17 @@ fetch('https://api.unsplash.com/photos?client_id=_CfdRIyvRxD4LnrNlRj-r7pGE5ZAcul
                     row.innerHTML+= `
                     <div class="col-md-6 grid-item">
                             <img class=" image"  src="${data[i].urls.regular}" alt="">
-                                <h5>Fotografas: ${data[i].user.first_name}</h5>
+                                <h5 class="name"> ${data[i].user.first_name}</h5>
                                 <p class="title"> ${data[i].alt_description}</p>
                             </div>`    
                         }
+                        sig++;
+            console.log(sig);
                         var iso = new Isotope('.grid', {
                             itemSelector: '.grid-item',
                             stagger: 30,
                             getSortData: {
+                                name: '.name',
                                 title: '.title'
                             },
                             masonry: {
@@ -73,8 +99,29 @@ fetch('https://api.unsplash.com/photos?client_id=_CfdRIyvRxD4LnrNlRj-r7pGE5ZAcul
                             sortBy: 'title',
                             sortAscending: true,
                         });
-            sig++;
-            console.log(sig);
+                        var sortByGroup = document.querySelector('.sort-by-button-group');
+                sortByGroup.addEventListener('click', function(event){
+
+                    if (!matchesSelector(event.target, '.btn')) {
+                        return;
+                    }
+
+                    var sortValue = event.target.getAttribute('data-sort-value');
+                    var sortDirection = event.target.getAttribute('data-sort-direction');
+                    var isAscending = (sortDirection == 'asc'); //true, folse
+
+                    iso.arrange({
+                        sortBy: sortValue,
+                        sortAscending: isAscending
+                    });
+
+
+                    // console.log(isAscending);
+
+                    // console.log(sortValue);
+                    // console.log( sortDirection);
+                });
+            
             });
             console.log(ScrollDebounce);
             setTimeout(function () { ScrollDebounce = true; }, 100); 
