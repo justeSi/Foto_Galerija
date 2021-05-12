@@ -26,8 +26,8 @@ fetch('https://api.unsplash.com/photos?client_id=_CfdRIyvRxD4LnrNlRj-r7pGE5ZAcul
                     columnWidth: '.grid-sizer',
                     gutter: '.grid-gutter-sizer'
                 },
-                sortBy: 'title',
-                sortAscending: false,
+                sortBy: 'original-order',
+                sortAscending: true,
             });
             var sortByGroup = document.querySelector('.sort-by-button-group');
                 sortByGroup.addEventListener('click', function(event){
@@ -97,7 +97,7 @@ fetch('https://api.unsplash.com/photos?client_id=_CfdRIyvRxD4LnrNlRj-r7pGE5ZAcul
                                 gutter: '.grid-gutter-sizer'
                             },
                             sortBy: 'title',
-                            sortAscending: false,
+                            sortAscending: true,
                         });
                         var sortByGroup = document.querySelector('.sort-by-button-group');
                 sortByGroup.addEventListener('click', function(event){
