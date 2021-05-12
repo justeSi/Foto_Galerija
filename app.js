@@ -129,6 +129,7 @@ fetch('https://api.unsplash.com/photos?client_id=_CfdRIyvRxD4LnrNlRj-r7pGE5ZAcul
         
     }
     }});
+    // ======="Lengas scrollinimas atgal į viršų =========="
     $('#up').click(function() {
         window.scroll({
             top: 0, 
