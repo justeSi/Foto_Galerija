@@ -43,28 +43,44 @@
         }
         .up {
             position: fixed;
-            top: 0%;
+            top: 0;
             right: 0;
+        }
+        @media all and (max-width: 700px) {
+
+            .up {
+                display: none;
+            }
         }
     </style>
 
 </head>
 <body>
     <div class='container'>
+
+<!-- ==============HEADER================================================ -->
+
         <div class="jumbotron jumbotron-fluid heading">
             <div class="container1">
                 <h1 class="display-4">Fotogalerija</h1>
                 <p class="lead">Kiekvienoje nuotraukoje yra du žmonės: fotografas ir žiūrovas</p>
             </div>
-          </div>
-          <a class="btn btn-danger up" id="up">Viršun!!!</a>
-          <div class="button-group sort-by-button-group">
-              <span><b> Rūšiavimas pagal: </b></span>
-            <button class="btn btn-dark is-checked" data-sort-value="random" data-sort-direction="desc">Atsitiktinę tvarką</button>
-            <button class="btn btn-dark" data-sort-value="name" data-sort-direction="asc">Fotografą (A-Z)</button>
-            <button class="btn btn-dark" data-sort-value="name" data-sort-direction="desc">Fotografą (Z-A)</button>
+        </div>
+
+<!-- =====================Fix'ed mygtukas, grįžimui į viršų===============-->
+        <a class="btn btn-danger up" id="up">Viršun!!!</a>
+
+<!-- ====================Mygtukų grupė=================================== -->
+        <div class="button-group sort-by-button-group">
+
+            <span><b> Rūšiavimas pagal: </b></span>
+            <button class="btn btn-dark is-checked" data-sort-value="random"data-sort-direction="desc">Atsitiktinę tvarką</button>
+            <button class="btn btn-dark" data-sort-value="name"data-sort-direction="asc">Fotografą (A-Z)</button>
+            <button class="btn btn-dark" data-sort-value="name"data-sort-direction="desc">Fotografą (Z-A)</button>
+            <button class="btn btn-dark" data-sort-value="title"data-sort-direction="asc">Apibūdinimą (A-Z)</button>
           
-          </div>
+        </div>
+<!--================Numatytoji strugtūra================================= -->
         <div class='row grid'>
             <div class="col-md-6 grid-sizer">
 

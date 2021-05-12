@@ -7,8 +7,8 @@ fetch('https://api.unsplash.com/photos?client_id=_CfdRIyvRxD4LnrNlRj-r7pGE5ZAcul
     console.log(data);
     for(var i = 0; i < data.length; i++) {
         console.log(data[i].urls.regular);
-        row.innerHTML+= `
-        <div class="col-md-6 grid-item">
+        row.innerHTML+= 
+        `<div class="col-md-6 grid-item">
                 <img class=" image"  src="${data[i].urls.regular}" alt="">
                     <h5 class="name"> ${data[i].user.first_name}</h5>
                     <p class="title"> ${data[i].alt_description}</p>
@@ -27,7 +27,7 @@ fetch('https://api.unsplash.com/photos?client_id=_CfdRIyvRxD4LnrNlRj-r7pGE5ZAcul
                     gutter: '.grid-gutter-sizer'
                 },
                 sortBy: 'title',
-                sortAscending: true,
+                sortAscending: false,
             });
             var sortByGroup = document.querySelector('.sort-by-button-group');
                 sortByGroup.addEventListener('click', function(event){
@@ -97,7 +97,7 @@ fetch('https://api.unsplash.com/photos?client_id=_CfdRIyvRxD4LnrNlRj-r7pGE5ZAcul
                                 gutter: '.grid-gutter-sizer'
                             },
                             sortBy: 'title',
-                            sortAscending: true,
+                            sortAscending: false,
                         });
                         var sortByGroup = document.querySelector('.sort-by-button-group');
                 sortByGroup.addEventListener('click', function(event){
