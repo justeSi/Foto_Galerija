@@ -13,6 +13,7 @@
     <!-- Rykiavimui bibliotekos -->
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
     <script src='https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js'></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <style>
         body {
             background-color: #444;
@@ -46,6 +47,7 @@
             top: 0;
             right: 0;
         }
+        
         @media all and (max-width: 700px) {
 
             .up {
@@ -71,19 +73,22 @@
         <a class="btn btn-danger up" id="up">Viršun!!!</a>
 
 <!-- ====================Mygtukų grupė=================================== -->
-        <div class="button-group sort-by-button-group">
+        <div class="button-group sort-by-button-group p-3 m-2">
 
-            <span><b> Rūšiavimas pagal: </b></span>
+            <span><h5> Rūšiavimas pagal: </h5></span>
 
-            <button class="btn btn-dark is-checked" data-sort-value="random" data-sort-direction="asc">Atsitiktinę tvarką</button>
+            <button class="btn btn-dark" data-sort-value="random" data-sort-direction="asc">Atsitiktinę tvarką</button>
 
-            <button class="btn btn-dark is-checked" data-sort-value="original-order" data-sort-direction="asc">Pirminį išdėstymą </button>
+            <button class="btn btn-dark" data-sort-value="original-order" data-sort-direction="asc">Pirminį išdėstymą </button>
 
-            <button class="btn btn-dark" data-sort-value="name" data-sort-direction="asc">Fotografą(A-Z)</button>
+            <button class="btn btn-dark" data-sort-value="name" data-sort-direction="asc">Fotografą (A-Z)</button>
 
-            <button class="btn btn-dark" data-sort-value="name" data-sort-direction="desc">Fotografą(Z-A)</button>
+            <button class="btn btn-dark" data-sort-value="name" data-sort-direction="desc">Fotografą (Z-A)</button>
+
+            <button class="btn btn-dark" data-sort-value="title" data-sort-direction="asc">Apibūdinimą (A-Z)</button>
+
+            <button class="btn btn-dark" data-sort-value="number" data-sort-direction="number">Populiarumą</button>
             
-            <button class="btn btn-dark" data-sort-value="title" data-sort-direction="asc">Apibūdinimą(A-Z)</button>
           
         </div>
 <!--================Numatytoji strugtūra================================= -->

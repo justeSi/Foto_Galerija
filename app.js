@@ -10,8 +10,9 @@ fetch('https://api.unsplash.com/photos?client_id=_CfdRIyvRxD4LnrNlRj-r7pGE5ZAcul
         row.innerHTML+= 
         `<div class="col-md-6 grid-item">
                 <img class=" image"  src="${data[i].urls.regular}" alt="">
-                    <h5 class="name"> ${data[i].user.first_name}</h5>
-                    <p class="title"> ${data[i].alt_description}</p>
+                    <h5 class="name mt-3">Fotografas: ${data[i].user.first_name}</h5>
+                    <p class="title">Aprašymas: ${data[i].alt_description}</p>
+                    <p class="likes"><i class="fa fa-thumbs-up"></i> ${data[i].likes}</p>
                 </div>`    
             }
             // ------------------------RIKIAVIMAS----------------------------------
@@ -20,14 +21,18 @@ fetch('https://api.unsplash.com/photos?client_id=_CfdRIyvRxD4LnrNlRj-r7pGE5ZAcul
                 stagger: 30,
                 getSortData: {
                     name: '.name',
-                    title: '.title'
+                    title: '.title',
+                    number: '.likes parseInt'
                 },
                 masonry: {
                     columnWidth: '.grid-sizer',
                     gutter: '.grid-gutter-sizer'
                 },
                 sortBy: 'original-order',
-                sortAscending: true,
+                sortAscending: {
+                    name: true,
+                    number: true
+                }
             });
             var sortByGroup = document.querySelector('.sort-by-button-group');
                 sortByGroup.addEventListener('click', function(event){
@@ -79,9 +84,10 @@ fetch('https://api.unsplash.com/photos?client_id=_CfdRIyvRxD4LnrNlRj-r7pGE5ZAcul
                     row.innerHTML+= `
                     <div class="col-md-6 grid-item">
                             <img class=" image"  src="${data[i].urls.regular}" alt="">
-                                <h5 class="name"> ${data[i].user.first_name}</h5>
-                                <p class="title"> ${data[i].alt_description}</p>
-                            </div>`    
+                            <h5 class="name mt-3">Fotografas: ${data[i].user.first_name}</h5>
+                            <p class="title">Aprašymas: ${data[i].alt_description}</p>
+                            <p class="likes"><i class="fa fa-thumbs-up"></i> ${data[i].likes}</p>
+                    </div>`    
                         }
                         sig++;
             console.log(sig);
@@ -90,14 +96,18 @@ fetch('https://api.unsplash.com/photos?client_id=_CfdRIyvRxD4LnrNlRj-r7pGE5ZAcul
                             stagger: 30,
                             getSortData: {
                                 name: '.name',
-                                title: '.title'
+                                title: '.title',
+                                number: '.likes parseInt'
                             },
                             masonry: {
                                 columnWidth: '.grid-sizer',
                                 gutter: '.grid-gutter-sizer'
                             },
                             sortBy: 'title',
-                            sortAscending: true,
+                            sortAscending: {
+                                name: true,
+                                number: true
+                            }
                         });
                         var sortByGroup = document.querySelector('.sort-by-button-group');
                 sortByGroup.addEventListener('click', function(event){
