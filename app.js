@@ -129,3 +129,11 @@ fetch('https://api.unsplash.com/photos?client_id=_CfdRIyvRxD4LnrNlRj-r7pGE5ZAcul
         
     }
     }});
+    $('#up').click(function() {
+        window.scroll({
+            top: 0, 
+            left: 0, 
+            behavior: 'smooth'
+          });
+    });
+    
