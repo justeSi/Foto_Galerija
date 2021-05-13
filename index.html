@@ -14,6 +14,7 @@
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
     <script src='https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js'></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
     <style>
         body {
             background-color: #444;
@@ -24,8 +25,7 @@
             height: 250px;
             object-fit: cover;
         }
-        .grid-item {
-        }
+        
         .grid-item:nth-child(odd) > img {
             height: 500px;
         }
@@ -48,11 +48,15 @@
             right: 0;
         }
         
-        @media all and (max-width: 700px) {
+        @media all and (max-width: 615px) {
 
             .up {
                 display: none;
             }
+        }
+        .top-b {
+            display: flex;
+            flex-direction: column;
         }
     </style>
 
@@ -60,7 +64,8 @@
 <body>
     <div class='container'>
 
-<!-- ==============HEADER================================================ -->
+                    <!--HEADER -->
+     
 
         <div class="jumbotron jumbotron-fluid heading">
             <div class="container1">
@@ -69,10 +74,20 @@
             </div>
         </div>
 
-<!-- =====================Fix'ed mygtukas, grįžimui į viršų===============-->
-        <a class="btn btn-danger up" id="up">Viršun!!!</a>
+    <!-- Fix'ed mygtukas, grįžimui į viršų (funkcionuoja, bet mažinant ekraną pasislepia po nuotraukom)-->
+        <a class="btn btn-outline-danger up" id="up">
+            <div class="top-b">
+            <span>V</span>
+            <span>I</span>
+            <span>R</span>
+            <span>Š</span>
+            <span>U</span>
+            <span>N</span>
+            <span>!</span>
+            </div>
+        </a>
 
-<!-- ====================Mygtukų grupė=================================== -->
+                    <!--Mygtukų grupė-->
         <div class="button-group sort-by-button-group p-3 m-2">
 
             <span><h5> Rūšiavimas pagal: </h5></span>
@@ -89,9 +104,8 @@
 
             <button class="btn btn-dark" data-sort-value="number" data-sort-direction="number">Populiarumą</button>
             
-          
         </div>
-<!--================Numatytoji strugtūra================================= -->
+                    <!-- Numatytoji strugtūra  -->
         <div class='row grid'>
             <div class="col-md-6 grid-sizer">
 
